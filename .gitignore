@@ -1,3 +1,17 @@
+.vscode
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+# no zero-install
+.pnp.*
+
+node_modules
+
 # Logs
 logs
 *.log

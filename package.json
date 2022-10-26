@@ -1,0 +1,52 @@
+{
+  "name": "root",
+  "packageManager": "yarn@3.2.1",
+  "private": true,
+  "useWorkspaces": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "upgrade": "yarn upgrade-interactive",
+    "p": "yarn workspace @phs/proxy",
+    "build-proxy": "yarn p prepare",
+    "proxy": "yarn p start",
+    "e": "yarn workspace @phs/editor",
+    "editor": "yarn e start"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-angular": "^17.1.0",
+    "@types/eslint": "^8",
+    "@types/prettier": "^2",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "path-browserify": "^1.0.1",
+    "prettier": "^2.7.1",
+    "shx": "^0.3.4",
+    "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": "^16.14.0",
+    "yarn": "3.2.1"
+  },
+  "lint-staged": {
+    "*.ts,tsx": [
+      "eslint --quiet --fix"
+    ],
+    "*.{html,scss,json}": [
+      "prettier --write"
+    ]
+  }
+}
