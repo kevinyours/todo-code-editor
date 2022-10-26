@@ -1,5 +1,12 @@
 # todo-code-editor
 
+1. Install dependencies
+
+```sh
+npm install -g typescript
+npm install -g typescript-language-server
+```
+
 1. scripts
 
 ```ts
